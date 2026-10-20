@@ -185,6 +185,168 @@
     /* ANIMATIONS */
     @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
     .hero-inner{animation:fadeUp 0.7s ease both;}
+
+    /* EMAIL CAPTURE — products page */
+    .email-capture {
+      background: #fff;
+      border: 2px solid #1a3a2a;
+      border-radius: 4px;
+      max-width: 640px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 6px 6px 0 #1a3a2a;
+    }
+    .capture-bar {
+      background: #1a3a2a;
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .capture-bar span {
+      color: #c8f0d0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .capture-bar .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .capture-body {
+      padding: 2rem 2rem 2.2rem;
+    }
+    .capture-eyebrow {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #2d7a4f;
+      margin-bottom: 0.65rem;
+    }
+    .capture-headline {
+      font-size: 1.65rem;
+      line-height: 1.25;
+      color: #1a1a1a;
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+    .capture-headline strong {
+      font-style: normal;
+      color: #1a3a2a;
+    }
+    .capture-subtext {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 1.4rem;
+      border-left: 3px solid #4ade80;
+      padding-left: 0.9rem;
+    }
+    .capture-bullets {
+      list-style: none;
+      margin-bottom: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .capture-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: #333;
+      line-height: 1.45;
+    }
+    .capture-bullets li::before {
+      content: '✓';
+      color: #2d7a4f;
+      font-weight: 700;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      margin-top: 0.05em;
+    }
+    .capture-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .capture-form input[type="email"] {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 2px solid #d0d0d0;
+      border-radius: 3px;
+      font-size: 1rem;
+      font-family: 'Georgia', serif;
+      color: #1a1a1a;
+      background: #fafafa;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .capture-form input[type="email"]:focus {
+      border-color: #2d7a4f;
+      background: #fff;
+    }
+    .capture-form input[type="email"]::placeholder {
+      color: #aaa;
+    }
+    .capture-form button {
+      width: 100%;
+      padding: 0.95rem 1rem;
+      background: #1a3a2a;
+      color: #fff;
+      font-family: 'Georgia', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border: 2px solid #1a3a2a;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.18s, transform 0.1s;
+    }
+    .capture-form button:hover {
+      background: #2d7a4f;
+      border-color: #2d7a4f;
+    }
+    .capture-form button:active {
+      transform: translateY(1px);
+    }
+    .capture-disclaimer {
+      font-size: 0.75rem;
+      color: #999;
+      text-align: center;
+      margin-top: 0.3rem;
+    }
+    .capture-success {
+      display: none;
+      text-align: center;
+      padding: 1.2rem 0 0.4rem;
+    }
+    .capture-success .checkmark {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .capture-success p {
+      font-size: 1rem;
+      color: #1a3a2a;
+      font-weight: 700;
+    }
+    .capture-success small {
+      font-size: 0.82rem;
+      color: #666;
+    }
+    @media (max-width: 480px) {
+      .capture-body { padding: 1.5rem 1.25rem 1.8rem; }
+      .capture-headline { font-size: 1.35rem; }
+    }
   </style>
 
 <script type="application/ld+json">
@@ -428,6 +590,91 @@
     </table>
   </div>
 </div>
+
+<!-- EMAIL CAPTURE -->
+<section class="email-capture" role="complementary" aria-label="Free debt payoff spreadsheet">
+
+  <div class="capture-bar">
+    <span class="dot"></span>
+    <span>Free Download — No Purchase Required</span>
+  </div>
+
+  <div class="capture-body">
+
+    <p class="capture-eyebrow">Not ready to buy? That's okay.</p>
+
+    <h2 class="capture-headline">
+      Get Your <strong>Free Debt Payoff Spreadsheet</strong> — and Start Cutting Debt This Week
+    </h2>
+
+    <p class="capture-subtext">
+      Plug in your balances once. It calculates your exact debt-free date, total interest saved,
+      and payoff order — automatically.
+    </p>
+
+    <ul class="capture-bullets">
+      <li>Debt-free date calculated the moment you enter your numbers</li>
+      <li>Snowball &amp; avalanche comparison built in — side by side</li>
+      <li>Works for credit cards, student loans, medical debt, and more</li>
+      <li>Instant download — no account, no credit card</li>
+    </ul>
+
+    <div class="capture-form" id="captureFormWrap">
+      <input
+        type="email"
+        id="captureEmail"
+        placeholder="Enter your email address"
+        autocomplete="email"
+        aria-label="Email address"
+      />
+      <button type="button" onclick="handleCapture()">
+        Send Me the Free Spreadsheet →
+      </button>
+      <p class="capture-disclaimer">🔒 We won't send you spam. Unsubscribe at any time.</p>
+    </div>
+
+    <div class="capture-success" id="captureSuccess">
+      <div class="checkmark">✅</div>
+      <p>Check your inbox — it's on its way!</p>
+      <small>Didn't get it? Check your spam folder or email us at info@debt-freeblueprint.com</small>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function handleCapture() {
+    const emailInput = document.getElementById('captureEmail');
+    const email = emailInput.value.trim();
+
+    // Basic validation
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailInput.style.borderColor = '#dc2626';
+      emailInput.focus();
+      emailInput.placeholder = 'Please enter a valid email address';
+      setTimeout(() => {
+        emailInput.style.borderColor = '#d0d0d0';
+        emailInput.placeholder = 'Enter your email address';
+      }, 2500);
+      return;
+    }
+
+    fetch('https://app.kit.com/forms/9400647/subscriptions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'email_address=' + encodeURIComponent(email)
+    });
+
+    // Show success state
+    document.getElementById('captureFormWrap').style.display = 'none';
+    document.getElementById('captureSuccess').style.display = 'block';
+  }
+
+  // Allow Enter key to submit
+  document.getElementById('captureEmail').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') handleCapture();
+  });
+</script>
 
 <!-- FAQ -->
 <div class="faq">
