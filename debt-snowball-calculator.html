@@ -163,6 +163,11 @@
     footer { background: var(--ink); color: rgba(255,255,255,0.5); text-align: center; padding: 28px 24px; font-size: 13px; margin-top: 60px; }
     .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 10px; }
     .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    /* FAQ */
+    .faq-item{border-bottom:1px solid var(--rule);padding:18px 0;}
+    .faq-q{font-family:var(--serif);font-weight:700;font-size:1rem;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+    .faq-q::after{content:'+';color:var(--accent);font-size:1.3rem;flex-shrink:0;}
+    .faq-a{font-size:0.93rem;color:var(--ink-light);line-height:1.7;}
   </style>
  <script type="application/ld+json">
 {
@@ -394,6 +399,72 @@
     <li>Choose <strong>Avalanche</strong> if you're disciplined and want to minimize total interest paid</li>
     <li>The best method is the one you'll actually stick to</li>
   </ul>
+  <h2>A Worked Example: The Snowball in Real Numbers</h2>
+  <p>Abstract advice is easy to ignore. Here is what the snowball looks like with real numbers. Suppose you have two debts and can put an extra $150 a month toward debt payoff:</p>
+  <ul>
+    <li><strong>Store Card:</strong> $1,800 balance at 24% APR, $45 minimum payment</li>
+    <li><strong>Visa:</strong> $6,000 balance at 20% APR, $120 minimum payment</li>
+  </ul>
+  <p>The snowball targets the Store Card first because it has the smallest balance. You pay $195 a month on it ($45 minimum + $150 extra) while paying just the $120 minimum on the Visa. In about 10 months, the Store Card is gone — you have paid roughly $210 in interest on it and freed up $195 a month.</p>
+  <p>Then the whole $195 "snowballs" into the Visa payment, raising it to $315 a month. About 22 months later, the Visa is paid off too. Total time to debt freedom: about 32 months (2.7 years), with roughly $2,400 in total interest paid across both debts.</p>
+  <div class="schedule-wrap">
+  <table>
+  <thead>
+  <tr>
+  <th></th>
+  <th>Snowball ($150/mo extra)</th>
+  <th>Minimums only</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><strong>Debt-free in</strong></td>
+  <td>~2.7 years</td>
+  <td>~9 years</td>
+  </tr>
+  <tr>
+  <td><strong>Total interest paid</strong></td>
+  <td>~$2,400</td>
+  <td>~$8,870</td>
+  </tr>
+  <tr>
+  <td><strong>You save</strong></td>
+  <td>~$6,470 and 6+ years</td>
+  <td>—</td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  <p>On minimums alone, the Store Card would take almost 7 years (about $1,860 in interest) and the Visa about 9 years (about $7,010 in interest) — and you would still be paying long after the snowball had you debt-free. That $150 a month of extra payments saves roughly $6,470 in interest and more than six years of payments.</p>
+  <h2>5 Snowball Mistakes That Stall Your Payoff</h2>
+  <ul>
+    <li><strong>Keep using the cards while you pay them off.</strong> New charges cancel out your extra payments. Put the cards away — literally freeze them or leave them home — until the balances are zero.</li>
+    <li><strong>Skipping the starter emergency fund.</strong> Without a small cash buffer, the next car repair or medical bill goes right back on the card. Build a $1,000 starter fund first, then attack the debt.</li>
+    <li><strong>Stopping the extra payments after the first win.</strong> The snowball only compounds if you keep rolling the full freed-up payment forward. Celebrate the win, then redirect every dollar to the next target.</li>
+    <li><strong>Choosing avalanche when you need quick wins.</strong> Avalanche saves more interest on paper, but if you have stalled out before, the fast first payoff of the snowball is worth more than the small interest difference.</li>
+    <li><strong>Never re-running the numbers.</strong> A balance transfer to 0% APR or a negotiated lower rate changes the math. Re-run the calculator every few months to make sure your payoff order still makes sense.</li>
+  </ul>
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <div class="faq-q">What if two debts have almost the same balance?</div>
+    <div class="faq-a">Use the higher APR as the tiebreaker. When balances are within a few hundred dollars of each other, targeting the higher-rate debt first saves a little interest without meaningfully delaying your first win.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Should I include my mortgage or student loans in the snowball?</div>
+    <div class="faq-a">Include student loans, personal loans, medical debt, and credit cards. Most people leave the mortgage out of the snowball and treat it separately, since its balance dwarfs everything else and would stall momentum for years. Pay off consumer debt first, then redirect the snowball at the mortgage if you want.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What if I can't afford any extra payment right now?</div>
+    <div class="faq-a">The snowball still gives you the fastest first win by ordering debts smallest-balance first, even on minimums alone. But the real power comes from extra payments. Look for $50–$100 by auditing subscriptions, negotiating bills, or selling unused items — then run the numbers again with the 50/30/20 budget guide.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Does this calculator account for balance transfers or rate changes?</div>
+    <div class="faq-a">No — it assumes your APRs stay fixed for the whole payoff. If you move debt to a 0% balance transfer card, enter the new lower APR (and the transfer fee as part of the balance) and re-run the calculation to see your updated payoff date.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How much does picking snowball over avalanche actually cost?</div>
+    <div class="faq-a">Less than most people fear — typically a few hundred dollars over a multi-debt payoff, because the higher-rate debts still get paid relatively quickly once the snowball grows. The calculator lets you compare both methods side by side with your real numbers, so you can see the exact tradeoff.</div>
+  </div>
 <!-- PRODUCT BANNER -->
   <div class="product-banner">
      <div class="pb-left">
