@@ -750,5 +750,142 @@
   <p>© 2026 The Debt-Free Blueprint · Digital products — no physical items ship</p>
 </footer>
 
+<!-- EXIT INTENT POPUP — Products Page -->
+<div id="products-exit-overlay" style="display:none;position:fixed;inset:0;background:rgba(10,31,69,0.85);z-index:99999;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#faf8f3;max-width:540px;width:100%;border-radius:8px;overflow:hidden;position:relative;box-shadow:0 24px 80px rgba(0,0,0,0.5);">
+
+    <!-- Close -->
+    <button onclick="closeProductsExit()" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#888;line-height:1;z-index:2;">&#215;</button>
+
+    <!-- Top band — urgency + math -->
+    <div style="background:#0a1f45;padding:28px 32px 24px;">
+      <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:10px;">Wait — still deciding?</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;font-weight:900;color:#fff;line-height:1.25;margin-bottom:12px;">
+        Here's What Waiting<br>Actually Costs You
+      </div>
+
+      <!-- Live interest counter -->
+      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+        <div>
+          <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Interest accruing on $15K @ 22% APR</div>
+          <div style="font-family:'Playfair Display',Georgia,serif;font-size:2rem;font-weight:700;color:#f0c060;" id="interest-counter">$0.00</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px;">since you opened this page</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:4px;">Paying minimums only?</div>
+          <div style="font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;color:#ff6b6b;font-weight:700;">19 years</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.35);">$27,400 in interest</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body — product choice -->
+    <div style="padding:24px 32px 28px;">
+      <p style="font-size:0.95rem;color:#4a4a44;line-height:1.65;margin-bottom:20px;">
+        The Starter Kit costs <strong style="color:#0a1f45;">$27</strong> and takes most people from overwhelmed to a clear payoff plan in one afternoon. The interest counter above adds that back in <strong>about 3 days</strong> on $15K of debt.
+      </p>
+
+      <!-- Primary CTA -->
+      <a href="https://samurai2822.gumroad.com/l/Starter" style="display:block;text-align:center;background:#1e6e3e;color:#fff;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.05rem;padding:14px 20px;border-radius:4px;text-decoration:none;margin-bottom:10px;transition:background 0.2s;" onmouseover="this.style.background='#165a30'" onmouseout="this.style.background='#1e6e3e'">
+        ⭐ Get the Starter Kit — $27 →
+      </a>
+
+      <!-- Secondary CTAs -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;">
+        <a href="https://samurai2822.gumroad.com/l/quickstart" style="display:block;text-align:center;background:#f0ede3;border:1px solid #d8d4c8;color:#0a1f45;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:0.85rem;padding:11px 10px;border-radius:4px;text-decoration:none;" onmouseover="this.style.background='#e8e4da'" onmouseout="this.style.background='#f0ede3'">
+          Quickstart Guide — $9.99
+        </a>
+        <a href="https://samurai2822.gumroad.com/l/Master" style="display:block;text-align:center;background:#0a1f45;color:#f0c060;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:0.85rem;padding:11px 10px;border-radius:4px;text-decoration:none;" onmouseover="this.style.background='#1a3a6a'" onmouseout="this.style.background='#0a1f45'">
+          Master Course — $97
+        </a>
+      </div>
+
+      <!-- Trust bar -->
+      <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;padding:12px 0;border-top:1px solid #e8e4da;border-bottom:1px solid #e8e4da;margin-bottom:14px;">
+        <span style="font-size:12px;color:#888;">🔒 Secure checkout</span>
+        <span style="font-size:12px;color:#888;">⚡ Instant download</span>
+        <span style="font-size:12px;color:#888;">↩️ 30-day guarantee</span>
+      </div>
+
+      <button onclick="closeProductsExit()" style="display:block;width:100%;background:none;border:none;font-size:12px;color:#bbb;cursor:pointer;text-decoration:underline;padding:4px 0;">
+        No thanks, I'll keep paying interest
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // ── Interest counter ───────────────────────────────────────
+  // Calculates real-time interest accruing on $15K @ 22% APR
+  // since the popup opened. Updates every 100ms for effect.
+  const principal = 15000;
+  const dailyRate = 0.22 / 365;
+  const perSecond = (principal * dailyRate) / 86400;
+  let secondsElapsed = 0;
+  let counterInterval = null;
+
+  function startCounter() {
+    if (counterInterval) return;
+    const start = Date.now();
+    counterInterval = setInterval(() => {
+      secondsElapsed = (Date.now() - start) / 1000;
+      const accrued = perSecond * secondsElapsed;
+      document.getElementById('interest-counter').textContent =
+        '$' + accrued.toFixed(4);
+    }, 100);
+  }
+
+  // ── Show / hide ────────────────────────────────────────────
+  let productsExitShown = false;
+
+  function showProductsExit() {
+    if (productsExitShown || sessionStorage.getItem('productsExitShown')) return;
+    productsExitShown = true;
+    sessionStorage.setItem('productsExitShown', 'true');
+    const overlay = document.getElementById('products-exit-overlay');
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    startCounter();
+  }
+
+  function closeProductsExit() {
+    document.getElementById('products-exit-overlay').style.display = 'none';
+    document.body.style.overflow = '';
+    if (counterInterval) { clearInterval(counterInterval); counterInterval = null; }
+  }
+
+  // ── Triggers ───────────────────────────────────────────────
+  if (!sessionStorage.getItem('productsExitShown')) {
+
+    // Desktop: mouse leaving toward browser bar
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY <= 0) showProductsExit();
+    });
+
+    // Mobile: back button / page hide
+    window.addEventListener('pagehide', showProductsExit);
+
+    // Mobile fallback: 90 seconds of inactivity
+    // (longer than homepage — products page readers take more time)
+    let idleTimer = setTimeout(showProductsExit, 90000);
+    ['mousemove','keypress','scroll','touchstart','click'].forEach(evt => {
+      document.addEventListener(evt, () => {
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(showProductsExit, 90000);
+      }, { passive: true });
+    });
+  }
+
+  // Close on overlay background click
+  document.getElementById('products-exit-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeProductsExit();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeProductsExit();
+  });
+</script>
 </body>
 </html>
