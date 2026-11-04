@@ -22,7 +22,7 @@
   <meta property="og:url" content="https://debt-freeblueprint.com/debt-snowball-calculator.html" />
 
   <!-- AdSense (replace with your ID) -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXX" crossorigin="anonymous"></script> -->
+  <!--  -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -64,10 +64,10 @@
     .hero-sub { font-size: 1.05rem; color: var(--ink-light); max-width: 580px; margin: 0 auto 36px; }
 
     /* AD SLOT */
-    .ad-slot { background: var(--paper-dark); border: 1px dashed var(--rule); border-radius: 4px; padding: 16px; text-align: center; margin: 32px auto; max-width: 860px; }
-    .ad-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-light); opacity: 0.5; margin-bottom: 8px; }
-    .ad-placeholder { width: 100%; max-width: 728px; height: 90px; background: linear-gradient(90deg,#e8e4da,#d8d4c8,#e8e4da); background-size: 200%; animation: shimmer 2s infinite; border-radius: 2px; margin: 0 auto; }
-    .ad-placeholder.rect { max-width: 300px; height: 250px; }
+    
+    
+    
+    
     @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
 
     /* CALCULATOR */
@@ -277,11 +277,8 @@
   <p class="hero-sub">Enter your debts below and get a personalized month-by-month payoff schedule — completely free, no signup required.</p>
 </div>
 
-<!-- TOP AD -->
-<div class="ad-slot" style="padding: 20px 24px;">
-  <div class="ad-label">Advertisement</div>
-  <div class="ad-placeholder"></div>
-</div>
+
+
 
 <!-- CALCULATOR -->
 <div class="calc-wrap">
@@ -352,10 +349,7 @@
     </div>
 
     <!-- MID RESULTS AD -->
-    <div class="ad-slot">
-      <div class="ad-label">Advertisement</div>
-      <div class="ad-placeholder rect" style="margin:0 auto;"></div>
-    </div>
+    
 
     <div class="calc-card">
       <div class="calc-card-title"><span>Schedule</span> Month-by-Month Payoff Plan</div>
@@ -380,11 +374,8 @@
 
 </div>
 
-<!-- BOTTOM AD -->
-<div class="ad-slot" style="max-width:860px; padding: 20px 24px;">
-  <div class="ad-label">Advertisement</div>
-  <div class="ad-placeholder"></div>
-</div>
+
+
 
 <!-- CONTENT --> 
 <div class="content-section">
@@ -468,7 +459,7 @@
 <!-- PRODUCT BANNER -->
   <div class="product-banner">
      <div class="pb-left">
-        <div class="pb-label">The Debt Freedom Blueprint</div>
+        <div class="pb-label">The Debt-Free Blueprint</div>
         <div class="pb-title">Want the Complete Credit Repair Roadmap?</div>
         <div class="pb-sub">Our Master Course includes a full 12-month credit score improvement plan with month-by-month actions, dispute templates, and negotiation scripts.</div>
       </div>
@@ -608,7 +599,7 @@
       const balance = parseFloat(inputs[1].value);
       const apr = parseFloat(inputs[2].value);
       const minPay = parseFloat(inputs[3].value);
-      if (balance && apr && minPay) debts.push({ name, balance, apr, minPay, originalBalance: balance });
+      if (!isNaN(balance) && balance > 0 && !isNaN(apr) && apr >= 0 && !isNaN(minPay) && minPay > 0) debts.push({ name, balance, apr, minPay, originalBalance: balance });
     });
 
     if (debts.length === 0) { alert('Please enter at least one debt.'); return; }
@@ -635,17 +626,34 @@
       let remainingTotal = 0;
       let paidOff = [];
 
-      // Calculate available extra for this month
-      let extraAvailable = extra;
+      // Snowball pool: the user's extra payment PLUS the minimum payments of
+      // every debt already paid off in earlier months (the snowball roll).
+      const freedMin = debts.filter(d => d.balance <= 0).reduce((s, d) => s + d.minPay, 0);
+      let pool = extra + freedMin;
       const activeDebts = debts.filter(d => d.balance > 0);
 
-      activeDebts.forEach((debt, idx) => {
-        const interest = debt.balance * (debt.apr / 100 / 12);
-        let payment = debt.minPay;
-        // Apply extra to first (priority) debt
-        if (idx === 0) payment += extraAvailable;
-        payment = Math.min(payment, debt.balance + interest);
+      // Accrue this month's interest on every active debt
+      activeDebts.forEach(debt => {
+        debt._interest = debt.balance * (debt.apr / 100 / 12);
+        debt._payment = 0;
+      });
 
+      // Pay minimums first, then roll the pool down the priority order.
+      // Any unused part of a dying debt's minimum joins the pool the same month.
+      activeDebts.forEach(debt => {
+        const owed = debt.balance + debt._interest;
+        let payment = Math.min(debt.minPay, owed);
+        pool += (debt.minPay - payment);
+        const add = Math.min(pool, owed - payment);
+        payment += add;
+        pool -= add;
+        debt._payment = payment;
+      });
+
+      // Apply payments
+      activeDebts.forEach(debt => {
+        const interest = debt._interest;
+        const payment = debt._payment;
         const principal = payment - interest;
         debt.balance = Math.max(0, debt.balance - principal);
 
