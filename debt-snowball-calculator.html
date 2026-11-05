@@ -216,6 +216,36 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How does the debt snowball calculator work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Enter each debt's name, balance, APR, and minimum payment. Add any extra monthly amount you can put toward debt. The calculator sorts your debts by balance (snowball) or interest rate (avalanche), then builds a month-by-month payoff schedule showing exactly when each debt is eliminated and when you'll be completely debt-free." } },
+    { "@type": "Question", "name": "What is the debt snowball method?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The debt snowball method pays off your smallest debt balance first while making minimum payments on all others. Once the smallest is paid off, you roll that payment into the next smallest debt. The payment amount 'snowballs' larger with each eliminated debt, building momentum and motivation." } },
+    { "@type": "Question", "name": "Does the debt snowball or debt avalanche save more money?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The debt avalanche method \u2014 targeting highest interest rates first \u2014 saves more money in total interest paid. However, research shows the snowball method leads to higher debt elimination rates in practice because the psychological wins of paying off accounts keep people motivated. The best method is the one you'll actually stick with." } },
+    { "@type": "Question", "name": "How much extra should I pay each month toward debt?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Even an extra $100\u2013$200 per month dramatically shortens your payoff timeline. For example, on $20,000 in credit card debt at 22% APR, paying $800 a month instead of the minimums cuts the payoff time from about 31 years down to about 2.8 years and saves roughly $28,600 in interest." } },
+    { "@type": "Question", "name": "Can I use this calculator for student loans and medical debt?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The calculator works for any debt type \u2014 credit cards, student loans, medical bills, personal loans, auto loans, or any combination. Enter each account as a separate row with its balance, interest rate, and minimum payment." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Debt Snowball Calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "description": "Free debt snowball and avalanche calculator. Enter your debts and get a personalized month-by-month payoff schedule with your exact debt-free date.",
+  "url": "https://debt-freeblueprint.com/debt-snowball-calculator.html",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
 </head>
 <body>
 
@@ -435,7 +465,52 @@
     <li><strong>Choosing avalanche when you need quick wins.</strong> Avalanche saves more interest on paper, but if you have stalled out before, the fast first payoff of the snowball is worth more than the small interest difference.</li>
     <li><strong>Never re-running the numbers.</strong> A balance transfer to 0% APR or a negotiated lower rate changes the math. Re-run the calculator every few months to make sure your payoff order still makes sense.</li>
   </ul>
-  <h2>Frequently Asked Questions</h2>
+  <style>
+  .example-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 1.25rem 0 1.5rem; }
+  .example-table th { background: #1a3a2a; color: #fff; padding: 0.6rem 0.75rem; text-align: left; font-weight: 600; }
+  .example-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid #e8e8e8; vertical-align: top; }
+  .example-table tr:nth-child(even) td { background: #f5f9f6; }
+  .example-table .paid-first { font-weight: 700; color: #2d7a4f; }
+  .result-callout { background: #f0faf4; border: 2px solid #2d7a4f; border-radius: 4px; padding: 1rem 1.25rem; margin: 1rem 0 1.75rem; font-size: 0.93rem; line-height: 1.6; }
+  .result-callout strong { color: #1a3a2a; }
+  .pro-tip { background: #fffbea; border-left: 4px solid #f59e0b; padding: 0.85rem 1.1rem; margin: 1.5rem 0; font-size: 0.91rem; line-height: 1.6; }
+  .pro-tip strong { color: #92400e; }
+</style>
+
+<h2>Worked Example: 3 Debts, Real Numbers</h2>
+<p>Here's how the snowball method plays out for a typical situation — three debts, $200 extra per month available.</p>
+<table class="example-table">
+  <thead>
+    <tr><th>Debt</th><th>Balance</th><th>APR</th><th>Min. Payment</th><th>Snowball Order</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="paid-first">Medical Bill</td><td class="paid-first">$1,200</td><td class="paid-first">0%</td><td class="paid-first">$50/mo</td><td class="paid-first">① Pay first</td></tr>
+    <tr><td>Credit Card</td><td>$6,400</td><td>22.9%</td><td>$160/mo</td><td>② Pay second</td></tr>
+    <tr><td>Personal Loan</td><td>$11,000</td><td>12%</td><td>$260/mo</td><td>③ Pay last</td></tr>
+  </tbody>
+</table>
+<p><strong>Total minimum payments:</strong> $470/mo &nbsp;|&nbsp; <strong>Extra payment added:</strong> $200/mo &nbsp;|&nbsp; <strong>Total monthly attack:</strong> $670/mo</p>
+<div class="result-callout">
+  <strong>Months 1–5:</strong> Throw the full $200 extra at the medical bill — $250 a month total. It's paid off in about 5 months.<br />
+  <strong>Months 6–23:</strong> Roll the freed $250 ($50 min + $200 extra) onto the credit card. Now attacking it with $410/mo — paid off around month 23.<br />
+  <strong>Months 24–35:</strong> Roll everything onto the personal loan — now paying $670/mo. Debt-free by about month 35.<br /><br />
+  <strong>Total time debt-free: about 2 years 11 months,</strong> with roughly $4,300 in total interest. On minimums alone, the credit card by itself would take about 6½ years at its $160 minimum.
+</div>
+<div class="pro-tip">
+  <strong>💡 Pro tip:</strong> Use the calculator above with these exact numbers to see the full month-by-month schedule. Try switching between Snowball and Avalanche mode — for this scenario, avalanche saves about $320 in interest and finishes about a month sooner, but the snowball's first win lands in month 5 instead of month 22.
+</div>
+
+<h2>5 Ways to Find More Money for Debt Payoff</h2>
+<p>The single biggest lever in your payoff timeline is the extra monthly amount. Here's where most people find it:</p>
+<ol style="padding-left:1.4rem; line-height:2; font-size:0.95rem; color:#333;">
+  <li><strong>Subscription audit</strong> — the average American spends $219/month on subscriptions and underestimates the total by about $133 (C+R Research). Audit yours and cancel what's unused this week.</li>
+  <li><strong>Call your insurers</strong> — auto and home insurance rates can often be reduced 10–20% by shopping competitors once a year.</li>
+  <li><strong>Negotiate your APR</strong> — call your card issuer and ask for a lower rate. In LendingTree's June 2026 survey, 84% of cardholders who asked got one.</li>
+  <li><strong>Sell one thing per month</strong> — unused electronics, clothes, or furniture on Facebook Marketplace adds up fast.</li>
+  <li><strong>Redirect windfalls</strong> — tax refunds, bonuses, and gifts applied directly to debt create huge jumps in the schedule.</li>
+</ol>
+
+<h2>Frequently Asked Questions</h2>
   <div class="faq-item">
     <div class="faq-q">What if two debts have almost the same balance?</div>
     <div class="faq-a">Use the higher APR as the tiebreaker. When balances are within a few hundred dollars of each other, targeting the higher-rate debt first saves a little interest without meaningfully delaying your first win.</div>
@@ -456,11 +531,31 @@
     <div class="faq-q">How much does picking snowball over avalanche actually cost?</div>
     <div class="faq-a">Less than most people fear — typically a few hundred dollars over a multi-debt payoff, because the higher-rate debts still get paid relatively quickly once the snowball grows. The calculator lets you compare both methods side by side with your real numbers, so you can see the exact tradeoff.</div>
   </div>
+  <div class="faq-item">
+    <div class="faq-q">How does the debt snowball calculator work?</div>
+    <div class="faq-a">Enter each debt's name, balance, APR, and minimum payment. Add any extra monthly amount you can put toward debt. The calculator sorts your debts by balance (snowball) or interest rate (avalanche), then builds a month-by-month payoff schedule showing exactly when each debt is eliminated and when you'll be completely debt-free.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What is the debt snowball method?</div>
+    <div class="faq-a">The debt snowball method pays off your smallest debt balance first while making minimum payments on all others. Once the smallest is paid off, you roll that payment into the next smallest debt. The payment amount 'snowballs' larger with each eliminated debt, building momentum and motivation.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Does the debt snowball or debt avalanche save more money?</div>
+    <div class="faq-a">The debt avalanche method — targeting highest interest rates first — saves more money in total interest paid. However, research shows the snowball method leads to higher debt elimination rates in practice because the psychological wins of paying off accounts keep people motivated. The best method is the one you'll actually stick with.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How much extra should I pay each month toward debt?</div>
+    <div class="faq-a">Even an extra $100–$200 per month dramatically shortens your payoff timeline. For example, on $20,000 in credit card debt at 22% APR, paying $800 a month instead of the minimums cuts the payoff time from about 31 years down to about 2.8 years and saves roughly $28,600 in interest.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Can I use this calculator for student loans and medical debt?</div>
+    <div class="faq-a">Yes. The calculator works for any debt type — credit cards, student loans, medical bills, personal loans, auto loans, or any combination. Enter each account as a separate row with its balance, interest rate, and minimum payment.</div>
+  </div>
 <!-- PRODUCT BANNER -->
   <div class="product-banner">
      <div class="pb-left">
         <div class="pb-label">The Debt-Free Blueprint</div>
-        <div class="pb-title">Want the Complete Credit Repair Roadmap?</div>
+        <div class="pb-title">Want the Complete Credit-Building Roadmap?</div>
         <div class="pb-sub">Our Master Course includes a full 12-month credit score improvement plan with month-by-month actions, dispute templates, and negotiation scripts.</div>
       </div>
       <a class="pb-btn" href="/master-course-sales.html">See the Course →</a>
