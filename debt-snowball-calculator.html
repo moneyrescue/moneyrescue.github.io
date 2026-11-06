@@ -169,8 +169,7 @@
     .faq-q::after{content:'+';color:var(--accent);font-size:1.3rem;flex-shrink:0;}
     .faq-a{font-size:0.93rem;color:var(--ink-light);line-height:1.7;}
   </style>
- <script type="application/ld+json">
-{
+ <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Debt Snowball Calculator — Free Payoff Schedule Tool",
@@ -191,12 +190,13 @@
     "url": "https://debt-freeblueprint.com"
   },
   "datePublished": "2026-01-01",
-  "dateModified": "2026-05-21"
-}
-</script>
+  "dateModified": "2026-05-21",
+  "image": [
+    "https://debt-freeblueprint.com/images/og/debt-snowball-calculator.png"
+  ]
+}</script>
 
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Debt Snowball Calculator",
@@ -214,10 +214,8 @@
     "name": "The Debt-Free Blueprint",
     "url": "https://debt-freeblueprint.com"
   }
-}
-</script>
-<script type="application/ld+json">
-{
+}</script>
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
@@ -302,10 +300,8 @@
       }
     }
   ]
-}
-</script>
-<script type="application/ld+json">
-{
+}</script>
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Debt Snowball Calculator",
@@ -313,9 +309,46 @@
   "operatingSystem": "Web",
   "description": "Free debt snowball and avalanche calculator. Enter your debts and get a personalized month-by-month payoff schedule with your exact debt-free date.",
   "url": "https://debt-freeblueprint.com/debt-snowball-calculator.html",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}</script>
+<style id="dfb-mobile">
+/* ---- mobile fixes (Nov 2026) ---- */
+html{-webkit-text-size-adjust:100%}
+img,video,iframe,canvas{max-width:100%;height:auto}
+article,.content-wrap>*{min-width:0}
+.dfb-tw{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+@media(max-width:700px){
+  footer div[style*="grid-template-columns"]{grid-template-columns:1fr 1fr !important;gap:28px 20px !important}
+  footer div[style*="grid-template-columns"]>div:first-child{grid-column:1/-1 !important}
+  footer{padding-left:20px !important;padding-right:20px !important}
+  footer a{display:inline-block;padding:7px 0}
+  .data-table-wrap table,.dfb-tw table{font-size:.82rem !important}
+  .data-table-wrap th,.data-table-wrap td,.dfb-tw th,.dfb-tw td{padding:8px 9px !important}
 }
-</script>
+/* compact header + single-row nav on phones */
+@media(max-width:700px){
+  .topbar{font-size:11px !important;padding:6px 12px !important;letter-spacing:.03em !important;line-height:1.4}
+  header{padding:12px 16px !important;gap:10px !important;justify-content:space-between !important}
+  header svg[aria-label]{width:38px !important;height:auto !important}
+  header a[href="/products.html"]{padding:8px 12px !important;font-size:12px !important}
+  header + nav{flex-wrap:nowrap !important;justify-content:flex-start !important;overflow-x:auto !important;-webkit-overflow-scrolling:touch;padding:0 8px !important;scrollbar-width:none}
+  header + nav::-webkit-scrollbar{display:none}
+  header + nav a{padding:12px 10px !important;flex:0 0 auto}
+}
+</style>
+<meta property="og:site_name" content="The Debt-Free Blueprint">
+<meta property="og:image" content="https://debt-freeblueprint.com/images/og/debt-snowball-calculator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Free debt snowball calculator that shows your debt-free date">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Debt Snowball Calculator 2026 — Free Payoff Planner & Schedule">
+<meta name="twitter:description" content="Free debt snowball calculator. Enter your debts, get a personalized month-by-month payoff schedule, and see exactly when you'll be debt-free.">
+<meta name="twitter:image" content="https://debt-freeblueprint.com/images/og/debt-snowball-calculator.png">
 </head>
 <body>
 
@@ -454,7 +487,7 @@
     <div class="calc-card">
       <div class="calc-card-title"><span>Schedule</span> Month-by-Month Payoff Plan</div>
       <div class="schedule-wrap">
-        <table>
+        <div class="dfb-tw"><table>
           <thead>
             <tr>
               <th>Month</th>
@@ -467,7 +500,7 @@
             </tr>
           </thead>
           <tbody id="schedule-body"></tbody>
-        </table>
+        </table></div>
       </div>
     </div>
   </div>
@@ -499,7 +532,7 @@
   <p>The snowball targets the Store Card first because it has the smallest balance. You pay $195 a month on it ($45 minimum + $150 extra) while paying just the $120 minimum on the Visa. In about 10 months, the Store Card is gone — you have paid roughly $210 in interest on it and freed up $195 a month.</p>
   <p>Then the whole $195 "snowballs" into the Visa payment, raising it to $315 a month. About 22 months later, the Visa is paid off too. Total time to debt freedom: about 32 months (2.7 years), with roughly $2,400 in total interest paid across both debts.</p>
   <div class="schedule-wrap">
-  <table>
+  <div class="dfb-tw"><table>
   <thead>
   <tr>
   <th></th>
@@ -524,7 +557,7 @@
   <td>—</td>
   </tr>
   </tbody>
-  </table>
+  </table></div>
   </div>
   <p>On minimums alone, the Store Card would take almost 7 years (about $1,860 in interest) and the Visa about 9 years (about $7,010 in interest) — and you would still be paying long after the snowball had you debt-free. That $150 a month of extra payments saves roughly $6,470 in interest and more than six years of payments.</p>
   <h2>5 Snowball Mistakes That Stall Your Payoff</h2>
@@ -549,7 +582,7 @@
 
 <h2>Worked Example: 3 Debts, Real Numbers</h2>
 <p>Here's how the snowball method plays out for a typical situation — three debts, $200 extra per month available.</p>
-<table class="example-table">
+<div class="dfb-tw"><table class="example-table">
   <thead>
     <tr><th>Debt</th><th>Balance</th><th>APR</th><th>Min. Payment</th><th>Snowball Order</th></tr>
   </thead>
@@ -558,7 +591,7 @@
     <tr><td>Credit Card</td><td>$6,400</td><td>22.9%</td><td>$160/mo</td><td>② Pay second</td></tr>
     <tr><td>Personal Loan</td><td>$11,000</td><td>12%</td><td>$260/mo</td><td>③ Pay last</td></tr>
   </tbody>
-</table>
+</table></div>
 <p><strong>Total minimum payments:</strong> $470/mo &nbsp;|&nbsp; <strong>Extra payment added:</strong> $200/mo &nbsp;|&nbsp; <strong>Total monthly attack:</strong> $670/mo</p>
 <div class="result-callout">
   <strong>Months 1–5:</strong> Throw the full $200 extra at the medical bill — $250 a month total. It's paid off in about 5 months.<br />
