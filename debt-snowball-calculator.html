@@ -221,16 +221,86 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How does the debt snowball calculator work?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Enter each debt's name, balance, APR, and minimum payment. Add any extra monthly amount you can put toward debt. The calculator sorts your debts by balance (snowball) or interest rate (avalanche), then builds a month-by-month payoff schedule showing exactly when each debt is eliminated and when you'll be completely debt-free." } },
-    { "@type": "Question", "name": "What is the debt snowball method?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The debt snowball method pays off your smallest debt balance first while making minimum payments on all others. Once the smallest is paid off, you roll that payment into the next smallest debt. The payment amount 'snowballs' larger with each eliminated debt, building momentum and motivation." } },
-    { "@type": "Question", "name": "Does the debt snowball or debt avalanche save more money?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The debt avalanche method \u2014 targeting highest interest rates first \u2014 saves more money in total interest paid. However, research shows the snowball method leads to higher debt elimination rates in practice because the psychological wins of paying off accounts keep people motivated. The best method is the one you'll actually stick with." } },
-    { "@type": "Question", "name": "How much extra should I pay each month toward debt?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Even an extra $100\u2013$200 per month dramatically shortens your payoff timeline. For example, on $20,000 in credit card debt at 22% APR, paying $800 a month instead of the minimums cuts the payoff time from about 31 years down to about 2.8 years and saves roughly $28,600 in interest." } },
-    { "@type": "Question", "name": "Can I use this calculator for student loans and medical debt?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The calculator works for any debt type \u2014 credit cards, student loans, medical bills, personal loans, auto loans, or any combination. Enter each account as a separate row with its balance, interest rate, and minimum payment." } }
+    {
+      "@type": "Question",
+      "name": "What if two debts have almost the same balance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the higher APR as the tiebreaker. When balances are within a few hundred dollars of each other, targeting the higher-rate debt first saves a little interest without meaningfully delaying your first win."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I include my mortgage or student loans in the snowball?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Include student loans, personal loans, medical debt, and credit cards. Most people leave the mortgage out of the snowball and treat it separately, since its balance dwarfs everything else and would stall momentum for years. Pay off consumer debt first, then redirect the snowball at the mortgage if you want."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I can't afford any extra payment right now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The snowball still gives you the fastest first win by ordering debts smallest-balance first, even on minimums alone. But the real power comes from extra payments. Look for $50–$100 by auditing subscriptions, negotiating bills, or selling unused items — then run the numbers again with the 50/30/20 budget guide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this calculator account for balance transfers or rate changes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — it assumes your APRs stay fixed for the whole payoff. If you move debt to a 0% balance transfer card, enter the new lower APR (and the transfer fee as part of the balance) and re-run the calculation to see your updated payoff date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does picking snowball over avalanche actually cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Less than most people fear — typically a few hundred dollars over a multi-debt payoff, because the higher-rate debts still get paid relatively quickly once the snowball grows. The calculator lets you compare both methods side by side with your real numbers, so you can see the exact tradeoff."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the debt snowball calculator work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter each debt's name, balance, APR, and minimum payment. Add any extra monthly amount you can put toward debt. The calculator sorts your debts by balance (snowball) or interest rate (avalanche), then builds a month-by-month payoff schedule showing exactly when each debt is eliminated and when you'll be completely debt-free."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the debt snowball method?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The debt snowball method pays off your smallest debt balance first while making minimum payments on all others. Once the smallest is paid off, you roll that payment into the next smallest debt. The payment amount 'snowballs' larger with each eliminated debt, building momentum and motivation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the debt snowball or debt avalanche save more money?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The debt avalanche method — targeting highest interest rates first — saves more money in total interest paid. However, research shows the snowball method leads to higher debt elimination rates in practice because the psychological wins of paying off accounts keep people motivated. The best method is the one you'll actually stick with."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much extra should I pay each month toward debt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Even an extra $100–$200 per month dramatically shortens your payoff timeline. For example, on $20,000 in credit card debt at 22% APR, paying $800 a month instead of the minimums cuts the payoff time from about 31 years down to about 2.8 years and saves roughly $28,600 in interest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this calculator for student loans and medical debt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The calculator works for any debt type — credit cards, student loans, medical bills, personal loans, auto loans, or any combination. Enter each account as a separate row with its balance, interest rate, and minimum payment."
+      }
+    }
   ]
 }
 </script>
@@ -635,6 +705,15 @@
   </div>
 </div>
 
+<aside class="dfb-author" aria-label="About the author" style="max-width:760px;margin:40px auto;padding:20px 22px;background:#faf8f3;border:1px solid #d8d4c8;border-radius:6px;display:flex;gap:16px;align-items:flex-start;font-family:'Source Serif 4',Georgia,serif;color:#1a1a18;line-height:1.6;text-align:left;">
+  <div aria-hidden="true" style="width:52px;height:52px;border-radius:50%;background:#0a1f45;color:#4ade80;display:flex;align-items:center;justify-content:center;font:700 1.3rem 'Playfair Display',Georgia,serif;flex-shrink:0;">BT</div>
+  <div>
+    <div style="font:700 11px/1.2 'Courier New',monospace;letter-spacing:.12em;text-transform:uppercase;color:#1e6e3e;margin-bottom:4px;">From</div>
+    <div style="font:700 1.1rem 'Playfair Display',Georgia,serif;margin-bottom:6px;">The Blueprint Team</div>
+    <p style="margin:0 0 8px;font-size:.92rem;color:#4a4a44;">The Debt-Free Blueprint is an independent personal finance site publishing free debt-payoff guides and calculators. This is general education, not personalized financial advice.</p>
+    <p style="margin:0;font-size:.85rem;"><a href="/about.html#author">About this site</a> &middot; <a href="/about.html#editorial">How we research</a> &middot; <a href="/contact.html">Contact</a></p>
+  </div>
+</aside>
 <footer style="background:#0a1f45; color:rgba(255,255,255,0.5); padding:48px 32px 32px; margin-top:80px;">
   <div style="max-width:1080px; margin:0 auto;">
  
@@ -704,7 +783,7 @@
         <a href="/about.html" style="font-size:12px; color:rgba(255,255,255,0.4); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">About</a>
         <a href="/privacy-policy.html" style="font-size:12px; color:rgba(255,255,255,0.4); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Privacy Policy</a>
         <a href="/about.html#disclosure" style="font-size:12px; color:rgba(255,255,255,0.4); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Disclosure</a>
-        <a href="mailto:info@debt-freeblueprint.com" style="font-size:12px; color:rgba(255,255,255,0.4); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Contact</a>
+        <a href="/contact.html" style="font-size:12px; color:rgba(255,255,255,0.4); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Contact</a>
       </div>
     </div>
  
