@@ -86,9 +86,9 @@
     .numbers h2 { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; color: #fff; text-align: center; margin-bottom: 36px; }
     .numbers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
     @media(max-width: 580px) { .numbers-grid { grid-template-columns: repeat(2, 1fr); } }
-    .num-item { text-align: center; padding: 20px 16px; border-right: 1px solid rgba(255,255,255,0.08); }
+    .num-item { min-width: 0; overflow-wrap: anywhere; text-align: center; padding: 20px 10px; border-right: 1px solid rgba(255,255,255,0.08); }
     .num-item:last-child { border-right: none; }
-    .num-val { font-family: var(--serif); font-size: 2.2rem; font-weight: 900; color: #f0c060; display: block; line-height: 1; }
+    .num-val { font-family: var(--serif); font-size: clamp(1.6rem,6vw,2.2rem); font-weight: 900; color: #f0c060; display: block; line-height: 1; }
     .num-label { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 6px; }
 
     /* ── WHAT WE OFFER ── */
@@ -315,10 +315,10 @@ article,.content-wrap>*{min-width:0}
       <div class="numbers-label">The Debt Problem in America</div>
       <h2>Why This Site Exists</h2>
       <div class="numbers-grid">
-        <div class="num-item"><span class="num-val">$105,444</span><div class="num-label">Avg. debt per consumer (Experian)</div></div>
-        <div class="num-item"><span class="num-val">77%</span><div class="num-label">U.S. families carry debt</div></div>
-        <div class="num-item"><span class="num-val">$160B</span><div class="num-label">Credit card interest paid annually</div></div>
-        <div class="num-item"><span class="num-val">22%</span><div class="num-label">Avg credit card APR</div></div>
+        <div class="num-item"><span class="num-val">$105,444</span><div class="num-label">Avg. debt per consumer (<a href="https://www.experian.com/blogs/ask-experian/consumer-credit-review/" rel="noopener" target="_blank" style="color:inherit;text-decoration:underline">Experian</a>)</div></div>
+        <div class="num-item"><span class="num-val">77.4%</span><div class="num-label">U.S. families hold some debt (<a href="https://www.federalreserve.gov/publications/October-2023-changes-in-us-family-finances-from-2019-to-2022.htm" rel="noopener" target="_blank" style="color:inherit;text-decoration:underline">Federal Reserve, 2022</a>)</div></div>
+        <div class="num-item"><span class="num-val">$6,768</span><div class="num-label">Avg. credit card balance (<a href="https://www.experian.com/blogs/ask-experian/consumer-credit-review/" rel="noopener" target="_blank" style="color:inherit;text-decoration:underline">Experian</a>)</div></div>
+        <div class="num-item"><span class="num-val">22.15%</span><div class="num-label">Avg. credit card APR, Q2 2026 (<a href="https://www.federalreserve.gov/releases/g19/20260908/g19.pdf" rel="noopener" target="_blank" style="color:inherit;text-decoration:underline">Federal Reserve</a>)</div></div>
       </div>
     </div>
   </div>
@@ -372,7 +372,7 @@ article,.content-wrap>*{min-width:0}
   <div class="standards">
     <div class="standards-label">Editorial Standards</div>
     <h2>How We Research and Write</h2>
-    <p>Every guide on this site is written to be accurate, actionable, and honest — including when the honest answer is "it depends" or "we don't know." Here's how we approach our content:</p>
+    <p>Every guide on this site is written to be accurate, actionable, and honest — including when the honest answer is "it depends" or "we don't know." Here's how we approach our content (full details on our <a href="/editorial-standards.html">Editorial Standards page</a>):</p>
     <ul class="standard-list">
       <li>
         <div class="sl-icon">🔍</div>
